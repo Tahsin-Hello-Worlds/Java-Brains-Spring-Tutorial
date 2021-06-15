@@ -1,51 +1,30 @@
 package org.tahsin;
 
+import java.util.List;
+
 public class Triangle {
 	
-	private Point pointA;
-	private Point pointB;
-	private Point pointC;
+	private List<Point> points;
 	
-	
-	public Point getPointA() {
-		return pointA;
-	}
-
-
-
-	public void setPointA(Point pointA) {
-		this.pointA = pointA;
-	}
-
-
-
-	public Point getPointB() {
-		return pointB;
-	}
-
-
-
-	public void setPointB(Point pointB) {
-		this.pointB = pointB;
-	}
-
-
-
-	public Point getPointC() {
-		return pointC;
-	}
-
-
-
-	public void setPointC(Point pointC) {
-		this.pointC = pointC;
-	}
 
 	
+	public List<Point> getPoints() {
+		return points;
+	}
+
+
+
+	public void setPoints(List<Point> points) {
+		this.points = points;
+	}
+
+
+
 	public void Draw() {
-		System.out.println("Point A = (" + getPointA().getX() + ", " + getPointA().getY() + ")");
-		System.out.println("Point A = (" + getPointB().getX() + ", " + getPointB().getY() + ")");
-		System.out.println("Point A = (" + getPointC().getX() + ", " + getPointC().getY() + ")");
+		
+		for(Point point : points ) {
+			System.out.println("Point A = (" + point.getX() + ", " + point.getY() + ")");
+		}
 	}
 
 }

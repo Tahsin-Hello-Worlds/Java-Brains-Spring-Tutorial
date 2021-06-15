@@ -2,8 +2,20 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
 
 <beans>
-	<bean id="triangle" class="org.tahsin.Triangle">
-		<property name="pointA" ref="zeroPoint" />
+	<bean id="triangle" class="org.tahsin.Triangle" name="triangle-name">
+		<property name="pointA">
+			<idref bean="zeroPoint" />
+			
+			
+			<!--
+				This gives error  
+
+				Helping documents  https://coderanch.com/t/571698/frameworks/exception-configuration-file
+			-->
+			
+			
+			
+		</property>
 		<property name="pointB">
 			<bean class="org.tahsin.Point">
 				<property name="x" value="-20" />
@@ -23,3 +35,4 @@
 	</bean>
 	<alias name="triangle" alias="triangle-alias" />
 </beans>
+

@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 
-public class Triangle implements InitializingBean, DisposableBean {
+public class Triangle {
 	
 	private Point pointA;
 	private Point pointB;
@@ -56,20 +56,25 @@ public class Triangle implements InitializingBean, DisposableBean {
 
 
 
-	@Override
-	public void afterPropertiesSet() throws Exception {
-		// TODO Auto-generated method stub
-		System.out.println("InitializingBean init method called for Triangle");
-		
-	}
-
-
-
-	@Override
-	public void destroy() throws Exception {
-		// TODO Auto-generated method stub
-		System.out.println("Desposable Beans called for the Triangle");
-		
+//	@Override
+//	public void afterPropertiesSet() throws Exception {
+//		// TODO Auto-generated method stub
+//		System.out.println("InitializingBean init method called for Triangle");
+//		
+//	}
+//
+//
+//
+//	@Override
+//	public void destroy() throws Exception {
+//		// TODO Auto-generated method stub
+//		System.out.println("Desposable Beans called for the Triangle");
+//		
+//	}
+	
+	
+	public void myInit() {
+		System.out.println("myInit method called for triangle");
 	}
 
 }

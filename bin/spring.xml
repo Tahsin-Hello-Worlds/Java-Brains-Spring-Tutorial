@@ -2,19 +2,22 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"    " http://www.springframework.org/dtd/spring-beans-2.0.dtd ">
 
 <beans>
-	<bean id="parenttriangle" class="org.tahsin.Triangle">
-		<property name="pointA" ref="pointA" />
+	<bean id="parenttriangle" class="org.tahsin.Triangle" abstract="true">
+		<property name="points">
+			<list>
+				<ref bean="pointA" />
+			</list>
+		</property>
 	</bean>
 	
 	<bean id="triangle1" class="org.tahsin.Triangle" parent="parenttriangle">
-		<property name="pointB" ref="pointB" />
-		<property name="pointC" ref="pointC" />		
+		<property name="points">
+			<list merge="true">
+				<ref bean="pointB" />
+			</list>
+		</property>		
 	</bean>
-	
-	<bean id="triangle2" class="org.tahsin.Triangle" parent="parenttriangle">
-		<property name="pointB" ref="pointB" />
-	</bean>
-	
+		
 	<bean id="pointA" class="org.tahsin.Point">
 		<property name="x" value="0" />
 		<property name="y" value="0" />

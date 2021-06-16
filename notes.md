@@ -1,4 +1,0 @@
-ApplicationContextAware
-ApplicationEventPublisherAware
-BeanClassLoaderAware
-BeanNameAware

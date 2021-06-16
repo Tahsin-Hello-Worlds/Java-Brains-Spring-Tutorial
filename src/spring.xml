@@ -21,6 +21,6 @@
 		<property name="y" value="0" />
 	</bean>
 	
-	<bean class="org.tahsin.DisplayNameBeanPostProcessor" />
+	<bean class="org.tahsin.MyBeanFactoryPP" /> 
 	
 </beans>

@@ -3,10 +3,11 @@ package org.tahsin;
 import java.util.List;
 
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
-public class Triangle implements ApplicationContextAware {
+public class Triangle implements BeanNameAware {
 	
 	private Point pointA;
 	private Point pointB;
@@ -56,9 +57,17 @@ public class Triangle implements ApplicationContextAware {
 		System.out.println("Point A = (" + getPointC().getX() + ", " + getPointC().getY() + ")");	
 	}
 	
+//	@Override
+//	public void setApplicationContext(ApplicationContext context) throws BeansException {
+//		this.context = context;	
+//	}
+
+
+
 	@Override
-	public void setApplicationContext(ApplicationContext context) throws BeansException {
-		this.context = context;	
+	public void setBeanName(String beanName) {
+		System.out.println("Bean Name is : " + beanName);
+		
 	}
 
 }

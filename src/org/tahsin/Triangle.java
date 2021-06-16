@@ -2,11 +2,16 @@ package org.tahsin;
 
 import java.util.List;
 
-public class Triangle {
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+
+public class Triangle implements ApplicationContextAware {
 	
 	private Point pointA;
 	private Point pointB;
 	private Point pointC;
+	private ApplicationContext context = null;
 	
 	
 	public Point getPointA() {
@@ -49,6 +54,11 @@ public class Triangle {
 		System.out.println("Point A = (" + getPointA().getX() + ", " + getPointA().getY() + ")");
 		System.out.println("Point A = (" + getPointB().getX() + ", " + getPointB().getY() + ")");
 		System.out.println("Point A = (" + getPointC().getX() + ", " + getPointC().getY() + ")");	
+	}
+	
+	@Override
+	public void setApplicationContext(ApplicationContext context) throws BeansException {
+		this.context = context;	
 	}
 
 }

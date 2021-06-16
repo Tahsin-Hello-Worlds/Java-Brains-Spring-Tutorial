@@ -76,5 +76,9 @@ public class Triangle {
 	public void myInit() {
 		System.out.println("myInit method called for triangle");
 	}
+	
+	public void cleanUp () {
+		System.out.println("My clean Up method called for triange");
+	}
 
 }

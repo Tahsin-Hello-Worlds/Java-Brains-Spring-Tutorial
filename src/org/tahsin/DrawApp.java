@@ -1,6 +1,7 @@
 package org.tahsin;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class DrawApp {
@@ -10,9 +11,10 @@ public class DrawApp {
 		
 		//Triangle triangle = new Triangle();
 		
-		//ApplicationContext context = new ClassPathXmlApplicationContext("file:src/main/resources/spring.xml");
-		ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-		Triangle triangle = (Triangle) context.getBean("triangle1");
+		
+		AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+		context.registerShutdownHook();
+		Triangle triangle = (Triangle) context.getBean("triangle");
 		triangle.Draw();
 
 	}

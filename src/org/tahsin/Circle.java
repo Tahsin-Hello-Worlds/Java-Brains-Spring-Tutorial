@@ -1,5 +1,7 @@
 package org.tahsin;
 
+import org.springframework.beans.factory.annotation.Required;
+
 public class Circle implements Shape {
 	
 	private Point center;
@@ -11,7 +13,7 @@ public class Circle implements Shape {
 	}
 
 
-
+	@Required
 	public void setCenter(Point center) {
 		this.center = center;
 	}

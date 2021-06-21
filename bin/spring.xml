@@ -2,16 +2,18 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"    " http://www.springframework.org/dtd/spring-beans-2.0.dtd ">
 
 <beans>
-	<bean id="triangle" class="org.tahsin.Triangle">
+
+<!-- 	<bean id="triangle" class="org.tahsin.Triangle">
 		<property name="pointA" ref="pointA" />
 		<property name="pointB" ref="pointB" />
 		<property name="pointC" ref="pointC" />
 	</bean>
-	
+-->
 	<bean id="pointA" class="org.tahsin.Point">
 		<property name="x" value="0" />
 		<property name="y" value="0" />
 	</bean>
+<!-- 
 	<bean id="pointB" class="org.tahsin.Point">
 		<property name="x" value="-20" />
 		<property name="y" value="0" />
@@ -19,9 +21,12 @@
 	<bean id="pointC" class="org.tahsin.Point">
 		<property name="x" value="20" />
 		<property name="y" value="0" />
-	</bean>
+	</bean> 
+-->
 	<bean id="circle" class="org.tahsin.Circle">
-		<property name="center" ref="pointA"/>
+		<!-- <property name="center" ref="pointA"/> -->
 	</bean>
+	
+	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
 	
 </beans>

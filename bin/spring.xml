@@ -25,14 +25,17 @@
 		<property name="x" value="-20" />
 		<property name="y" value="0" />
 	</bean>
-	<bean id="pointC" class="org.tahsin.Point">
+	<bean id="center" class="org.tahsin.Point">
 		<property name="x" value="20" />
 		<property name="y" value="0" />
-	</bean> 
-	<bean id="circle" class="org.tahsin.Circle">
-		<!-- <property name="center" ref="pointA"/> -->
 	</bean>
 	
+<!-- 	<bean id="circle" class="org.tahsin.Circle">
+		<property name="center" ref="pointC" />
+	</bean>
+ -->	
 	<context:annotation-config/>
+	
+	<context:component-scan base-package="org.tahsin" />
 	
 </beans>

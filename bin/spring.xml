@@ -41,6 +41,8 @@
 			</list>
 		</property>
 	</bean>
+	<bean id="myEventListener" class="org.tahsin.MyEventListener">
+	</bean>
 
 	<context:annotation-config/>
 	

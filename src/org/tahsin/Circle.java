@@ -5,15 +5,21 @@ import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.context.ApplicationEventPublisherAware;
 import org.springframework.context.MessageSource;
 
 
-public class Circle implements Shape {
+public class Circle implements Shape, ApplicationEventPublisherAware {
 	
 	private Point center;
 	
 	@Autowired
 	private MessageSource messageSource;
+	
+	
+	
+	private ApplicationEventPublisher publisher;
 	
 	
 
@@ -42,6 +48,9 @@ public class Circle implements Shape {
 		// System.out.println("Circle Point is : (" + center.getX() + ", " + center.getY() + ")");
 		
 		
+		DrawEvent drawEvent = new DrawEvent(this);
+		publisher.publishEvent(drawEvent);
+		
 		// System.out.println(this.messageSource.getMessage("greeting", null, "Default Greeting", null));
 	}
 	
@@ -53,6 +62,12 @@ public class Circle implements Shape {
 	@PreDestroy
 	public void destroyCircle() {
 		System.out.println("Circle Destroyed");
+	}
+
+	@Override
+	public void setApplicationEventPublisher(ApplicationEventPublisher publisher) {
+		this.publisher = publisher;
+		
 	}
 	
 }

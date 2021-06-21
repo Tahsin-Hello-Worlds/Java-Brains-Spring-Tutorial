@@ -1,7 +1,6 @@
 package org.tahsin;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import javax.annotation.Resource;
 
 public class Circle implements Shape {
 	
@@ -13,9 +12,7 @@ public class Circle implements Shape {
 		return center;
 	}
 
-
-	@Autowired
-	@Qualifier("circleRelated")
+	@Resource(name="pointC")
 	public void setCenter(Point center) {
 		this.center = center;
 	}

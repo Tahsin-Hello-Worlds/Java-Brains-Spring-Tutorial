@@ -30,12 +30,20 @@
 		<property name="y" value="0" />
 	</bean>
 	
-<!-- 	<bean id="circle" class="org.tahsin.Circle">
-		<property name="center" ref="pointC" />
+	<bean id="circle" class="org.tahsin.Circle">
+		<property name="center" ref="center" />
 	</bean>
- -->	
+	
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>mymessages</value>
+			</list>
+		</property>
+	</bean>
+
 	<context:annotation-config/>
 	
-	<context:component-scan base-package="org.tahsin" />
+	<!-- <context:component-scan base-package="org.tahsin" /> -->
 	
 </beans>

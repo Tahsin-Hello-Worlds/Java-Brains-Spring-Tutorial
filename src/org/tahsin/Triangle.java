@@ -1,7 +1,5 @@
 package org.tahsin;
 
-import java.util.List;
-
 public class Triangle implements Shape {
 	
 	private Point pointA;

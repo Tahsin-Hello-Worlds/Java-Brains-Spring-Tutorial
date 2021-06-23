@@ -10,7 +10,8 @@
    <!-- bean definition & AOP specific configuration -->
    
    
-   <!-- <aop:aspectj-autoproxy/> -->
+   <aop:aspectj-autoproxy/>
+
 
 
 	<bean name="triangle" class="org.tahsin.model.Triangle">
@@ -21,4 +22,7 @@
 	</bean>
 	
 	<bean name="shapeService" class="org.tahsin.service.ShapeService" autowire="byName" />
+	
+	<bean name="LoggingAspect" class="org.tahsin.aspect.LoggingAspect" />
+	
 </beans>

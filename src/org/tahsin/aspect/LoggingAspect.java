@@ -1,5 +1,6 @@
 package org.tahsin.aspect;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -9,8 +10,12 @@ import org.aspectj.lang.annotation.Pointcut;
 public class LoggingAspect {
 	
 	@Before("allGetters() && allCircleMethods()")
-	public void LoggingAdvice() {
-		System.out.println("Advice run. Get Method called");
+	
+	// JoinPoint is the method that called this Advice 
+	public void LoggingAdvice(JoinPoint joinPoint) {
+		
+		
+		System.out.println(joinPoint.toString());
 	}
 	
 	

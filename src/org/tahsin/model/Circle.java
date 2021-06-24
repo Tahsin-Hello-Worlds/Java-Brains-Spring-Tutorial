@@ -9,6 +9,7 @@ public class Circle {
 
 	public void setName(String name) {
 		this.name = name;
+		System.out.println("Circle's setter called");
 	}
 	
 	

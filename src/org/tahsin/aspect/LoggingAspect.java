@@ -41,7 +41,9 @@ public class LoggingAspect {
 	}
 	
 	@Around("allGetters()")
-	public void myAroundAdvice(ProceedingJoinPoint proceedingJoinPoint) {
+	public Object myAroundAdvice(ProceedingJoinPoint proceedingJoinPoint) {
+		
+		Object returnValue = null;
 		
 		try {
 			System.out.println("Before advice");
@@ -52,6 +54,8 @@ public class LoggingAspect {
 		}
 		
 		System.out.println("After Finally");
+		
+		return returnValue;
 		
 	}
 	

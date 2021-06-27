@@ -14,3 +14,5 @@ https://www.youtube.com/watch?v=tU6eQh9Hmqk&list=PLE37064DE302862F8&index=8
 
 The Advice is called when you explicitly called the setter, 
 not when spring called the setter while initializing.
+
+After aspect method is called just after the set method is called, no matter the method is finished executing or not.

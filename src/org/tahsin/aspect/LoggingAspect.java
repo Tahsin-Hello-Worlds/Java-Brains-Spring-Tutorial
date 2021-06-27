@@ -1,13 +1,15 @@
 package org.tahsin.aspect;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
+// import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
-import org.tahsin.model.Circle;
+// import org.tahsin.model.Circle;
 
 
 @Aspect 
@@ -36,6 +38,21 @@ public class LoggingAspect {
 	@AfterThrowing(pointcut="args(name)", throwing="ex") 
 	public void exceptionAdvice(String name, RuntimeException ex){
 		System.out.println("An Exception has been thrown" + ex);
+	}
+	
+	@Around("allGetters()")
+	public void myAroundAdvice(ProceedingJoinPoint proceedingJoinPoint) {
+		
+		try {
+			System.out.println("Before advice");
+			proceedingJoinPoint.proceed();
+			System.out.println("After Returning");
+		} catch (Throwable e) {
+			System.out.println("After Throwing");
+		}
+		
+		System.out.println("After Finally");
+		
 	}
 	
 	@Pointcut("execution(* get*())")

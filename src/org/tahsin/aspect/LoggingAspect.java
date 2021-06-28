@@ -2,14 +2,13 @@ package org.tahsin.aspect;
 
 
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
+// import org.aspectj.lang.annotation.Around;
+//import org.aspectj.lang.annotation.Aspect;
 // import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+// import org.aspectj.lang.annotation.Pointcut;
 // import org.tahsin.model.Circle;
 
 
-@Aspect 
 public class LoggingAspect {
 	
 	
@@ -30,8 +29,9 @@ public class LoggingAspect {
 		return returnValue;
 	}
 	
-	@Pointcut("execution(* get*())")
-	public void allGetters() {}
+	public void loggingAdvice() {
+		System.out.println("Logging from the advice");
+	}
 	
 	
 }

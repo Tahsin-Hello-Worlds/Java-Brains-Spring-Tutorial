@@ -26,9 +26,10 @@
 	<bean name="LoggingAspect" class="org.tahsin.aspect.LoggingAspect" />
 	
 	<aop:config>
-		<aop:aspect id="LoggingAspect">
-			<aop:around pointcut="@annotation(classes.aspects.Loggable)" method="myAroundAdvice"/>
+		<aop:aspect id="loggingAspect">
 			<aop:pointcut id="allGetters" expression="execution(* get*())" />
+			<aop:around pointcut-ref="allGetters" method="myAroundAdvice"/>
+			
 		</aop:aspect>
 	</aop:config>
 	

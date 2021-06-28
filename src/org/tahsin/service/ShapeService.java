@@ -8,6 +8,7 @@ public class ShapeService {
 	private Circle circle;
 	
 	public Circle getCircle() {
+		System.out.println("Circle get a call");
 		return circle;
 	}
 	

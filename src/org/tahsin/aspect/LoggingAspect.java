@@ -40,7 +40,7 @@ public class LoggingAspect {
 		System.out.println("An Exception has been thrown" + ex);
 	}
 	
-	@Around("allGetters()")
+	@Around("@annotation(org.tahsin.aspect.Loggable)")
 	public Object myAroundAdvice(ProceedingJoinPoint proceedingJoinPoint) {
 		
 		Object returnValue = null;
@@ -56,15 +56,13 @@ public class LoggingAspect {
 		System.out.println("After Finally");
 		
 		return returnValue;
-		
 	}
 	
 	@Pointcut("execution(* get*())")
 	public void allGetters() {}
 	
+	
 	@Pointcut("within(org.tahsin.model.Circle)")
 	public void allCircleMethods() {}
 	
-	
-
 }
